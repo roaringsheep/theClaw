@@ -1,16 +1,19 @@
 var url = "http://localhost:3000/";
 
 $(document).ready(function() {
-    $("#pi").on('click', function() {
-        var piData = $('#pi').data('state');
-        $(this).data("state", piData == true ? false : true);
-        console.log(piData);
+    $("#port18").on('click', function() {
+        var button = $('#port18');
+	var piData = $('#port18').data('state');
+	var portNum = button.data('port');
 
+        $(this).data("state", piData == true ? false : true);
+        console.log('piData',piData);
         $.ajax({
             type: "POST",
-            url: url,
+            url: 'http://192.168.1.66:3000',
             data: {
-                state: piData
+                state: piData,
+		port: portNum
             },
             dataType: "text",
             success: function(response) {
@@ -18,4 +21,4 @@ $(document).ready(function() {
             }
         });
     });
-})
+});

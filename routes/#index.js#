@@ -18,7 +18,7 @@ router.post('/', function(req, res) {
 		gpio.close(port);
 	    });
 	} else {
-	    gpio.write(port,0, function() {
+	    gpio.write(port,0 function() {
 		gpio.close(port);
 	    });
 	}
