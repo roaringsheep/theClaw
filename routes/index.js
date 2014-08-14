@@ -13,7 +13,7 @@ router.post('/', function(req, res) {
     console.log("req.body.state:", req.body.state, 'req.body.port', req.body.port);
     var port = Number(req.body.port);
     gpio.open(port, "output", function(err) {
-	if(req.body.state == 'true'){
+	if(req.body.state == 'on'){
 	    gpio.write(port ,1,  function() {
 		gpio.close(port);
 	    });
