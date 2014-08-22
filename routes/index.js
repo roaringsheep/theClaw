@@ -24,8 +24,9 @@ router.post('/', function(req, res) {
 	}
     });
     res.send(200, {state: req.body.state, port: req.body.port});
-    // res.send(200, "post route works", {state:req.body.state})
-
 });
+
+
+
 
 module.exports = router;
