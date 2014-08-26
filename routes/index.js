@@ -4,7 +4,7 @@ var gpio = require('pi-gpio');
 
 [7, 11, 12, 13, 15, 16, 18, 22].forEach(function(portNum) {
   gpio.open(portNum, "output", function(err) {
-    if(err) console.log("Error opening", port, err);
+    if(err) console.log("Error opening", portNum, err);
     console.log("Opened port", portNum);
   });
 });
