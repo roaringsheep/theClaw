@@ -9,8 +9,7 @@ var post = function(id) {
         type: "POST",
         url: 'http://192.168.1.66:3000' || url,
         data: {
-            state: status,
-            port: port
+          "ports": port.toString() + "," + status.toString()
         },
         dataType: "text",
         success: function(response) {
